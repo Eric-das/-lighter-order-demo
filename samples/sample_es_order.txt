@@ -1,0 +1,36 @@
+PEDIDO DE COMPRA
+
+Cliente:               Distribuidora Iberica S.L.
+Persona de contacto:   Carlos Mendez
+Email:                 carlos.mendez@iberica-dist.es
+Número de pedido:      ESP-2026-0042
+Fecha entrega:         25 de agosto de 2026
+Destino:               Puerto de Valencia, España
+Incoterms:             CIF Valencia
+Forma de pago:         Carta de crédito a 60 días
+
+Productos solicitados:
+
+----------------------------------------------------
+1) Modelo:         LT-202 Slim
+   Color:          Negro
+   Cantidad:       15.000 unidades
+   Accesorios:     piedra de chispa, gatillo de seguridad infantil
+   Calidad:        ISO 9994, certificación CE, marca CR (Child Resistant) obligatoria para mercado UE
+   Precio unidad:  EUR 0,38
+
+2) Modelo:         LT-101 Classic
+   Color:          Verde
+   Cantidad:       8.000 unidades
+   Accesorios:     piedra de chispa estándar
+   Calidad:        ISO 9994
+   Observación:    logo serigrafiado a 2 colores
+   Precio unidad:  EUR 0,28
+----------------------------------------------------
+
+Por favor confirmar disponibilidad y plazo de entrega.
+
+Saludos cordiales,
+Carlos Mendez
+Director de Compras
+Distribuidora Iberica S.L.

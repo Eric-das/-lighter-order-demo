@@ -1,0 +1,39 @@
+From: john.smith@acme-lighting.com
+To: sales@yourfactory.com
+Subject: PO-2026-0518 - Lighter Order Q3
+Date: May 18, 2026
+
+Dear Sales Team,
+
+We would like to place the following order. Please confirm by reply at your earliest convenience.
+
+PO Number:          PO-2026-0518
+Required Delivery:  by June 30, 2026
+Destination:        Hamburg, Germany
+Incoterms:          FOB Shenzhen
+Payment:            T/T 30 days after BL
+
+Item 1:
+  Model:          LT-101 Classic
+  Color:          Red
+  Quantity:       10,000 pcs
+  Accessories:    flint stone, windproof cap
+  Quality:        ISO 9994, CE certified
+  Unit Price:     USD 0.35
+
+Item 2:
+  Model:          LT-202 Slim
+  Color:          Black
+  Quantity:       5,000 pcs
+  Accessories:    flint stone
+  Quality:        ISO 9994
+  Note:           Logo printing required (artwork attached separately)
+  Unit Price:     USD 0.42
+
+Looking forward to your confirmation.
+
+Best regards,
+John Smith
+Procurement Manager
+ACME Lighting Co., Ltd.
+Tel: +49 40 1234 5678
