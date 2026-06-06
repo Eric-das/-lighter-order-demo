@@ -18,6 +18,14 @@ from utils.i18n import t
 
 load_dotenv()
 
+# Bridge Streamlit Cloud secrets -> env vars, so os.getenv() in agents works
+# whether the key comes from a local .env or the cloud Secrets panel.
+try:
+    for _k, _v in st.secrets.items():
+        os.environ.setdefault(_k, str(_v))
+except Exception:
+    pass
+
 
 # ---------- Page config ----------
 st.set_page_config(
