@@ -56,5 +56,43 @@ def _extract_pdf_text(stream: io.BytesIO) -> str:
     pages = []
     with pdfplumber.open(stream) as pdf:
         for page in pdf.pages:
+            # overprint fake-bold PDFs draw each glyph several times with a
+            # sub-point offset; dedupe_chars merges those duplicates
+            try:
+                page = page.dedupe_chars(tolerance=2)
+            except Exception:
+                pass  # keep raw page if dedupe is unavailable/fails
             pages.append(page.extract_text() or "")
-    return "\n".join(pages)
+    return _collapse_overprint_runs("\n".join(pages))
+
+
+def _collapse_overprint_runs(text: str) -> str:
+    """Fallback for overprint PDFs that dedupe_chars misses.
+
+    Such extractions repeat EVERY glyph a fixed k times in a row
+    ("宁宁宁宁波波波波" / "2222000022225555"). Detect a dominant repeat
+    factor k over the whole document; only when the pattern is pervasive,
+    collapse each run whose length is a multiple of k.
+    """
+    import re
+    from collections import Counter
+
+    runs = [(ch, len(m.group(0)))
+            for m in re.finditer(r"(.)\1*", text, flags=re.DOTALL)
+            for ch in [m.group(1)]]
+    multi = [n for ch, n in runs if n > 1 and not ch.isspace()]
+    if len(multi) < 20:
+        return text
+    k = Counter(multi).most_common(1)[0][0]
+    if k < 2:
+        return text
+    # pervasive = most repeated glyphs share the same factor
+    if sum(1 for n in multi if n % k == 0) < 0.8 * len(multi):
+        return text
+    out = []
+    for ch, n in runs:
+        if not ch.isspace() and n % k == 0:
+            out.append(ch * (n // k))
+        else:
+            out.append(ch * n)
+    return "".join(out)

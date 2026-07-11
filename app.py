@@ -6,6 +6,8 @@ Run locally:
 import io
 import json
 import os
+import re
+from datetime import date, timedelta
 from pathlib import Path
 
 import pandas as pd
@@ -15,6 +17,7 @@ from dotenv import load_dotenv
 from agents.order_parser import parse_order
 from utils.file_loader import load_text_from_file
 from utils.i18n import t
+from utils.scheduler import OrderInput, load_capacity, schedule
 
 load_dotenv()
 
@@ -235,17 +238,6 @@ _PLACEHOLDER = {
               "- ライターは危険物 (UN1057) のため、船積み制約を考慮\n"
               "- 各注文明細の最遅完成日を逆算",
     },
-    "tab_production": {
-        "zh": "- 根据 SKU 查工艺路线 (BOM + Routing)\n"
-              "- 按最晚完工日倒排到每道工序 (注塑→装配→充气→印刷→QC→包装)\n"
-              "- 考虑产线产能、瓶颈工序、物料齐套",
-        "en": "- Look up routing (BOM + work centers) by SKU\n"
-              "- Back-schedule each operation (molding→assembly→gas-fill→printing→QC→packing)\n"
-              "- Account for capacity, bottleneck work centers, material coverage",
-        "ja": "- SKUごとに工程ルート (BOM + 工程) を参照\n"
-              "- 最遅完成日から各工程 (成形→組立→ガス充填→印刷→検査→梱包) を逆スケジューリング\n"
-              "- ライン能力、ボトルネック工程、部材手配状況を考慮",
-    },
     "tab_exception": {
         "zh": "- 异常列表 (型号不存在 / 产能不足 / 物料缺料 / 交期不可达)\n"
               "- 一键起草客户邮件确认改型号或改交期",
@@ -261,8 +253,155 @@ with tab2:
     st.markdown(_PLACEHOLDER["tab_shipping"][lang])
 
 with tab3:
-    st.info(t(lang, "tab_coming_soon"))
-    st.markdown(_PLACEHOLDER["tab_production"][lang])
+    # ---------- capacity master data ----------
+    @st.cache_data
+    def _capacity():
+        return load_capacity(Path(__file__).parent / "data" / "capacity.json")
+
+    cap_data = _capacity()
+    st.caption(t(lang, "sched_capacity_caption").format(n=len(cap_data["capacity"])))
+
+    # ---------- orders table ----------
+    st.subheader(t(lang, "sched_orders_title"))
+
+    def _orders_from_parse() -> pd.DataFrame:
+        result = st.session_state.get("parse_result")
+        if not result:
+            return pd.DataFrame(columns=["order_id", "model", "quantity", "due_date"])
+        meta = result.get("order_meta") or {}
+        po = meta.get("po_number") or "ORDER"
+        due_raw = str(meta.get("requested_delivery") or "")
+        m = re.search(r"(\d{4})[年/\-.](\d{1,2})[月/\-.](\d{1,2})", due_raw)
+        due = date(int(m.group(1)), int(m.group(2)), int(m.group(3))) if m \
+            else date.today() + timedelta(days=21)
+        rows = []
+        for i, line in enumerate(result.get("line_items") or [], 1):
+            sku = str(line.get("sku") or "")
+            mm = re.search(r"\d{3,4}", sku)
+            qty = line.get("quantity")
+            try:
+                qty = int(float(str(qty).replace(",", "")))
+            except (TypeError, ValueError):
+                qty = 0
+            rows.append({
+                "order_id": f"{po}-{i}",
+                "model": mm.group() if mm else sku,
+                "quantity": qty,
+                "due_date": due,
+            })
+        return pd.DataFrame(rows)
+
+    if "sched_orders" not in st.session_state or st.button("↻", help="reload from parse"):
+        st.session_state["sched_orders"] = _orders_from_parse()
+    if st.session_state["sched_orders"].empty:
+        st.info(t(lang, "sched_no_orders"))
+    else:
+        st.caption(t(lang, "sched_from_parse").format(
+            n=len(st.session_state["sched_orders"])))
+
+    orders_df = st.data_editor(
+        st.session_state["sched_orders"],
+        use_container_width=True,
+        num_rows="dynamic",
+        key="sched_editor",
+        column_config={
+            "order_id": st.column_config.TextColumn(t(lang, "sched_col_order")),
+            "model": st.column_config.TextColumn(t(lang, "sched_col_model")),
+            "quantity": st.column_config.NumberColumn(t(lang, "sched_col_qty"),
+                                                      min_value=0, step=1000),
+            "due_date": st.column_config.DateColumn(t(lang, "sched_col_due")),
+        },
+    )
+
+    # ---------- parameters ----------
+    st.subheader(t(lang, "sched_params"))
+    pc1, pc2, pc3, pc4 = st.columns(4)
+    with pc1:
+        start_d = st.date_input(t(lang, "sched_start"), value=date.today())
+    with pc2:
+        horizon = st.number_input(t(lang, "sched_horizon"), 7, 90, 30)
+    with pc3:
+        overtime = st.slider(t(lang, "sched_overtime"), 1.0, 2.0, 1.0, 0.25)
+    with pc4:
+        sunday_off = st.checkbox(t(lang, "sched_sunday_off"), value=False)
+
+    # ---------- run ----------
+    if st.button(t(lang, "btn_run_schedule"), type="primary",
+                 use_container_width=True, disabled=orders_df.empty):
+        orders = []
+        for _, row in orders_df.iterrows():
+            if not row.get("model") or not row.get("quantity"):
+                continue
+            due = row.get("due_date")
+            due = due.date() if hasattr(due, "date") else due
+            orders.append(OrderInput(
+                order_id=str(row.get("order_id") or f"O{len(orders) + 1}"),
+                model=str(row["model"]).strip(),
+                quantity=int(row["quantity"]),
+                due_date=due or (start_d + timedelta(days=21)),
+            ))
+        st.session_state["sched_result"] = schedule(
+            orders, cap_data, start_d, int(horizon),
+            overtime_factor=overtime,
+            rest_weekday=6 if sunday_off else None,
+        )
+
+    res = st.session_state.get("sched_result")
+    if res:
+        # ---------- summary ----------
+        st.subheader(t(lang, "sched_summary"))
+        status_label = {
+            "ok": t(lang, "sched_status_ok"),
+            "late": t(lang, "sched_status_late"),
+            "unfinished": t(lang, "sched_status_unfinished"),
+            "unknown_model": t(lang, "sched_status_unknown"),
+        }
+        summary = pd.DataFrame([{
+            t(lang, "sched_col_order"): o.order_id,
+            t(lang, "sched_col_model"): o.model,
+            t(lang, "sched_col_qty"): o.quantity,
+            t(lang, "sched_col_due"): o.due_date,
+            t(lang, "sched_col_done"): o.completion_date,
+            t(lang, "sched_col_status"): status_label[o.status],
+        } for o in res.orders])
+        st.dataframe(summary, use_container_width=True, hide_index=True)
+
+        all_warnings = [f"{o.order_id}: {w}" for o in res.orders for w in o.warnings]
+        if all_warnings:
+            with st.expander(t(lang, "sched_warnings"), expanded=False):
+                for w in all_warnings:
+                    st.markdown(f"- {w}")
+
+        # ---------- daily pivot ----------
+        if res.plan:
+            st.subheader(t(lang, "sched_pivot"))
+            st.caption(t(lang, "sched_pivot_hint"))
+            plan_df = pd.DataFrame(res.plan)
+            order_ids = [t(lang, "sched_pivot_all")] + sorted(
+                plan_df["order_id"].unique())
+            pick = st.selectbox("order filter", order_ids,
+                                label_visibility="collapsed")
+            view = plan_df if pick == t(lang, "sched_pivot_all") \
+                else plan_df[plan_df["order_id"] == pick]
+            route = cap_data["meta"]["route"]
+            pivot = view.pivot_table(index="date", columns="process",
+                                     values="qty", aggfunc="sum", fill_value=0)
+            pivot = pivot.reindex(columns=[p for p in route if p in pivot.columns])
+            st.dataframe(pivot, use_container_width=True)
+
+            # ---------- export ----------
+            buf = io.BytesIO()
+            with pd.ExcelWriter(buf, engine="openpyxl") as writer:
+                summary.to_excel(writer, sheet_name="summary", index=False)
+                plan_df.to_excel(writer, sheet_name="daily_plan", index=False)
+                pivot.to_excel(writer, sheet_name="pivot")
+            st.download_button(
+                t(lang, "btn_export_plan"),
+                data=buf.getvalue(),
+                file_name="production_schedule.xlsx",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                use_container_width=True,
+            )
 
 with tab4:
     st.info(t(lang, "tab_coming_soon"))

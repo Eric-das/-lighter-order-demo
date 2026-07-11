@@ -1,0 +1,2624 @@
+{
+  "meta": {
+    "source": "E:\\项目\\Demo\\排产数据\\排产软件",
+    "workday_hours": 8,
+    "route": [
+      "焊接",
+      "翻板",
+      "加气",
+      "试火",
+      "质检",
+      "包装"
+    ],
+    "caveats": [
+      "产能取区间下限(保守)",
+      "工序级汇总: 同一台机器登记的多个型号按各自可用产能计入,未建模跨型号争用",
+      "注塑为空模板未纳入; 打头/穿弹簧/干检等子工序未纳入",
+      "包装'通用'机台单列为 universal_packing_pool,型号无专用包装机时可用"
+    ]
+  },
+  "records": [
+    {
+      "process": "加气",
+      "machine": "1号车",
+      "model": "128",
+      "cap_low": 30000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "2号车",
+      "model": "711",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "2号车",
+      "model": "712",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "2号车",
+      "model": "138",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "3号车",
+      "model": "138",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "3号车",
+      "model": "903",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "3号车",
+      "model": "711",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "3号车",
+      "model": "712",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "4号车",
+      "model": "129",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "5号车",
+      "model": "906",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "5号车",
+      "model": "801",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "5号车",
+      "model": "916",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "6号车",
+      "model": "2201",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "6号车",
+      "model": "603",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "7号车",
+      "model": "717",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "7号车",
+      "model": "137",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "7号车",
+      "model": "716",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "7号车",
+      "model": "926",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "7号车",
+      "model": "908",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "8号车",
+      "model": "916",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "8号车",
+      "model": "906",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "8号车",
+      "model": "801",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "8号车",
+      "model": "605",
+      "cap_low": 40000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "9号车",
+      "model": "135",
+      "cap_low": 15000.0,
+      "cap_high": 18000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "10号车",
+      "model": "720",
+      "cap_low": 80000.0,
+      "cap_high": 80000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "10号车",
+      "model": "921",
+      "cap_low": 80000.0,
+      "cap_high": 80000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "10号车",
+      "model": "920",
+      "cap_low": 80000.0,
+      "cap_high": 80000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "11号车",
+      "model": "921",
+      "cap_low": 80000.0,
+      "cap_high": 80000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "11号车",
+      "model": "720",
+      "cap_low": 80000.0,
+      "cap_high": 80000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "12号车",
+      "model": "715",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "12号车",
+      "model": "919",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "12号车",
+      "model": "917",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "12号车",
+      "model": "716",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "13号车",
+      "model": "919",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "13号车",
+      "model": "715",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "13号车",
+      "model": "712",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "15号车",
+      "model": "918",
+      "cap_low": 60000.0,
+      "cap_high": 65000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "15号车",
+      "model": "718",
+      "cap_low": 60000.0,
+      "cap_high": 65000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "15号车",
+      "model": "161",
+      "cap_low": 60000.0,
+      "cap_high": 65000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "手工加气16/17号车",
+      "model": "2012",
+      "cap_low": 6000.0,
+      "cap_high": 7000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "手工加气16/17号车",
+      "model": "911",
+      "cap_low": 12000.0,
+      "cap_high": 13000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "手工加气16/17号车",
+      "model": "1802",
+      "cap_low": 9600.0,
+      "cap_high": 9600.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "手工加气16/17号车",
+      "model": "1902",
+      "cap_low": 7500.0,
+      "cap_high": 7500.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "手工加气16/17号车",
+      "model": "132",
+      "cap_low": 14000.0,
+      "cap_high": 14000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "加气",
+      "machine": "手工加气16/17号车",
+      "model": "1908",
+      "cap_low": 9600.0,
+      "cap_high": 9600.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "试火",
+      "machine": "流量机1号",
+      "model": "801",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "内销机：1.5-2cm  日本机：2-2.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机1号",
+      "model": "916",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm 日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机2号",
+      "model": "921",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "内销机：4.5-5cm 日本机：？"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机3号",
+      "model": "129",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机4号",
+      "model": "161",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机4号",
+      "model": "138",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机4号",
+      "model": "921",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "内销机：4.5-5cm 日本机：？"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机5号",
+      "model": "919",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机5号",
+      "model": "717",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：3.5-4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机5号",
+      "model": "137",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机6号",
+      "model": "919",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机6号",
+      "model": "137",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机7号",
+      "model": "128",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：3.5-4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机7号",
+      "model": "132",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4-5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机7号",
+      "model": "604",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "美国机：4.5-5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机8号",
+      "model": "715",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：2.5-3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机9号",
+      "model": "916",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm 日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机10号",
+      "model": "906",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm 边贸/日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机10号",
+      "model": "908",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机10号",
+      "model": "903",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机11号",
+      "model": "906",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm 边贸/日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机11号",
+      "model": "135",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机/内销机：3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机12号",
+      "model": "711",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "2.5-3cm 711E:3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机12号",
+      "model": "716",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机13号",
+      "model": "918",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机:4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机14号",
+      "model": "718",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机/内销机：3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机14号",
+      "model": "720",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "内销机：3.5-4cm  日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机15号",
+      "model": "718",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "欧洲机/内销机：3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机15号",
+      "model": "720",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "内销机：3.5-4cm  日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机16号",
+      "model": "919",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机17号",
+      "model": "715",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": null,
+      "note": "日本机：2.5-3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机18号",
+      "model": "2201",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机18号",
+      "model": "603",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "欧洲机：3.5-4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机18号",
+      "model": "605",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "内销机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机19号",
+      "model": "1802",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "美国机：6-8cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机20号",
+      "model": "2201",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机20号",
+      "model": "603",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "欧洲机：3.5-4cm"
+    },
+    {
+      "process": "试火",
+      "machine": "流量机20号",
+      "model": "605",
+      "cap_low": 17000.0,
+      "cap_high": 17000.0,
+      "staff": null,
+      "note": "内销机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机1号",
+      "model": "921",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "内销机：4.5-5cm 日本机：？"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机2号",
+      "model": "916",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm 日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机3号",
+      "model": "801",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "内销机：1.5-2cm  日本机：2-2.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机4号",
+      "model": "921",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "内销机：4.5-5cm 日本机：？"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机5号",
+      "model": "906",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "欧洲机：4-4.5cm 边贸/日本机：3cm"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机6号",
+      "model": "718",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "欧洲机/内销机：3-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机6号",
+      "model": "918",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "欧洲机:4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "明火机7号",
+      "model": "720",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "内销机：3.5-4cm  日本机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "无调火1号",
+      "model": "918",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": null,
+      "note": "3-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "无调火2号",
+      "model": "712",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": null,
+      "note": "2.5-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "无调火2号",
+      "model": "135",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": null,
+      "note": "直冲机：3-5cm 明火机：2.5-3.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "手工试火",
+      "model": "2012",
+      "cap_low": 10000.0,
+      "cap_high": 11000.0,
+      "staff": null,
+      "note": "内销机：8-10cm 菲律宾：7cm 欧洲机：？"
+    },
+    {
+      "process": "试火",
+      "machine": "手工试火",
+      "model": "911",
+      "cap_low": 10000.0,
+      "cap_high": 11000.0,
+      "staff": null,
+      "note": "美国机：4-5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "手工试火",
+      "model": "1005",
+      "cap_low": 10000.0,
+      "cap_high": 11000.0,
+      "staff": null,
+      "note": "边贸机：4-4.5cm"
+    },
+    {
+      "process": "试火",
+      "machine": "手工试火",
+      "model": "1902",
+      "cap_low": 10000.0,
+      "cap_high": 11000.0,
+      "staff": null,
+      "note": "美国机：6-7cm"
+    },
+    {
+      "process": "质检",
+      "machine": "1号检验机",
+      "model": "129",
+      "cap_low": 13000.0,
+      "cap_high": 13000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "2号检验机",
+      "model": "906",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "2号检验机",
+      "model": "916",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "3号检验机",
+      "model": "921",
+      "cap_low": 48000.0,
+      "cap_high": 48000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "4号检验机",
+      "model": "906",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "4号检验机",
+      "model": "916",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "5号检验机",
+      "model": "801",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "6号检验机（不常用，以前用来检大边火）",
+      "model": "906",
+      "cap_low": 28000.0,
+      "cap_high": 28000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "6号检验机（不常用，以前用来检大边火）",
+      "model": "916",
+      "cap_low": 28000.0,
+      "cap_high": 28000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "7号检验机",
+      "model": "906",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "7号检验机",
+      "model": "916",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "8号检验机",
+      "model": "921",
+      "cap_low": 48000.0,
+      "cap_high": 48000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "9号检验机",
+      "model": "718",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": null,
+      "note": "机检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "128",
+      "cap_low": 64800.0,
+      "cap_high": 64800.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "129",
+      "cap_low": 57600.0,
+      "cap_high": 57600.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "132",
+      "cap_low": 46800.0,
+      "cap_high": 46800.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "135",
+      "cap_low": 64800.0,
+      "cap_high": 64800.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "137",
+      "cap_low": 57600.0,
+      "cap_high": 57600.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "1005",
+      "cap_low": 43200.0,
+      "cap_high": 43200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "161",
+      "cap_low": 46800.0,
+      "cap_high": 46800.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "2012",
+      "cap_low": 36000.0,
+      "cap_high": 36000.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "2201",
+      "cap_low": 43200.0,
+      "cap_high": 43200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "603",
+      "cap_low": 39600.0,
+      "cap_high": 39600.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "604",
+      "cap_low": 43200.0,
+      "cap_high": 43200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "605",
+      "cap_low": 61200.0,
+      "cap_high": 61200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "708",
+      "cap_low": 72000.0,
+      "cap_high": 72000.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "717",
+      "cap_low": 86400.0,
+      "cap_high": 86400.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "711",
+      "cap_low": 93600.0,
+      "cap_high": 93600.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "712",
+      "cap_low": 100800.0,
+      "cap_high": 100800.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "715",
+      "cap_low": 144000.0,
+      "cap_high": 144000.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "718",
+      "cap_low": 115200.0,
+      "cap_high": 115200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "720",
+      "cap_low": 129600.0,
+      "cap_high": 129600.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "903",
+      "cap_low": 79200.0,
+      "cap_high": 79200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "908",
+      "cap_low": 86400.0,
+      "cap_high": 86400.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "911",
+      "cap_low": 61200.0,
+      "cap_high": 61200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "916",
+      "cap_low": 122400.0,
+      "cap_high": 122400.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "919",
+      "cap_low": 144000.0,
+      "cap_high": 144000.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "917",
+      "cap_low": 108000.0,
+      "cap_high": 108000.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "920",
+      "cap_low": 93600.0,
+      "cap_high": 93600.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "921",
+      "cap_low": 115200.0,
+      "cap_high": 115200.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "质检",
+      "machine": "手检(9人)",
+      "model": "918",
+      "cap_low": 144000.0,
+      "cap_high": 144000.0,
+      "staff": 9,
+      "note": "手检"
+    },
+    {
+      "process": "翻板",
+      "machine": "1号线",
+      "model": "906",
+      "cap_low": 70000.0,
+      "cap_high": 70000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "1号线",
+      "model": "916",
+      "cap_low": 65000.0,
+      "cap_high": 65000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "1号线",
+      "model": "903",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "1号线",
+      "model": "917",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "2号线",
+      "model": "906",
+      "cap_low": 70000.0,
+      "cap_high": 70000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "2号线",
+      "model": "916",
+      "cap_low": 65000.0,
+      "cap_high": 65000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "2号线",
+      "model": "903",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "2号线",
+      "model": "917",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "3号线",
+      "model": "918",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "4号线",
+      "model": "715",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "4号线",
+      "model": "716",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "5号线",
+      "model": "711",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "5号线",
+      "model": "712",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "5号线",
+      "model": "717",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "5号线",
+      "model": "908",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "5号线",
+      "model": "906",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "6号线",
+      "model": "718",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "7号线",
+      "model": "919",
+      "cap_low": 43000.0,
+      "cap_high": 43000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "8号线",
+      "model": "921",
+      "cap_low": 45000.0,
+      "cap_high": 45000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "9号线",
+      "model": "921",
+      "cap_low": 45000.0,
+      "cap_high": 45000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "10号线",
+      "model": "921",
+      "cap_low": 45000.0,
+      "cap_high": 45000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "10号线",
+      "model": "138",
+      "cap_low": 16000.0,
+      "cap_high": 16000.0,
+      "staff": 4,
+      "note": "1个人"
+    },
+    {
+      "process": "翻板",
+      "machine": "10号线",
+      "model": "603",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "10号线",
+      "model": "926",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "10号线",
+      "model": "801",
+      "cap_low": 80000.0,
+      "cap_high": 80000.0,
+      "staff": 4,
+      "note": "2个人"
+    },
+    {
+      "process": "翻板",
+      "machine": "11号线",
+      "model": "920",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "11号线",
+      "model": "720",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "12号线",
+      "model": "605",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "12号线",
+      "model": "2201",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "13号线",
+      "model": "129",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": 4,
+      "note": null
+    },
+    {
+      "process": "翻板",
+      "machine": "13号线",
+      "model": "604",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 4,
+      "note": "1个人"
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-4贴标机",
+      "model": "919",
+      "cap_low": 70000.0,
+      "cap_high": 70000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-4贴标机",
+      "model": "711",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-4贴标机",
+      "model": "712",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-4贴标机",
+      "model": "919",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-2贴标机",
+      "model": "715",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-2贴标机",
+      "model": "716",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-2贴标机",
+      "model": "720",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-2贴标机",
+      "model": "718",
+      "cap_low": 60000.0,
+      "cap_high": 60000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "贴标机1号 双头机",
+      "model": "717",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": 3,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "贴标机3号",
+      "model": "717",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": 3,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "贴标机3号",
+      "model": "923",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 3,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "贴标机3号",
+      "model": "2012",
+      "cap_low": 15000.0,
+      "cap_high": 15000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "129贴标机",
+      "model": "129",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "921贴标机",
+      "model": "921",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "JBT-5",
+      "model": "通用",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": null,
+      "note": "通用机台池"
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机916专用",
+      "model": "916",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机1号",
+      "model": "918",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机1号",
+      "model": "717",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机1号",
+      "model": "715",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "921包纸机1号",
+      "model": "921",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "921包纸机2号",
+      "model": "921",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "921包纸机3号",
+      "model": "921",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "921包纸机4号",
+      "model": "921",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "921包纸机4号",
+      "model": "720",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机2号",
+      "model": "906",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机2号",
+      "model": "906",
+      "cap_low": 45000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机2号",
+      "model": "916",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机2号",
+      "model": "916",
+      "cap_low": 45000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机3号",
+      "model": "918",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机3号",
+      "model": "918",
+      "cap_low": 45000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机4号",
+      "model": "906",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机4号",
+      "model": "906",
+      "cap_low": 45000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机4号",
+      "model": "916",
+      "cap_low": 35000.0,
+      "cap_high": 40000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机4号",
+      "model": "916",
+      "cap_low": 45000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机5号",
+      "model": "138",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机5号",
+      "model": "138",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机5号",
+      "model": "128",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机5号",
+      "model": "128",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机5号",
+      "model": "129",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机5号",
+      "model": "129",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机6号",
+      "model": "135",
+      "cap_low": 7500.0,
+      "cap_high": 7500.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "包纸机8号",
+      "model": "2012",
+      "cap_low": 5376.0,
+      "cap_high": 5376.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑1号",
+      "model": "906",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑1号",
+      "model": "916",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑1号",
+      "model": "138",
+      "cap_low": 5600.0,
+      "cap_high": 5600.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑2号",
+      "model": "906",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑2号",
+      "model": "916",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑2号",
+      "model": "138",
+      "cap_low": 6880.0,
+      "cap_high": 6880.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑3号小",
+      "model": "138",
+      "cap_low": 6000.0,
+      "cap_high": 6000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑3号小",
+      "model": "2201",
+      "cap_low": 6000.0,
+      "cap_high": 6000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑3号小",
+      "model": "926",
+      "cap_low": 4000.0,
+      "cap_high": 4000.0,
+      "staff": 2,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑3号小",
+      "model": "923",
+      "cap_low": 6000.0,
+      "cap_high": 6000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "高频吸塑3号小",
+      "model": "603",
+      "cap_low": 6000.0,
+      "cap_high": 6000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "包装",
+      "machine": "热缩机+分切机+打包机",
+      "model": "通用",
+      "cap_low": 200000.0,
+      "cap_high": 200000.0,
+      "staff": null,
+      "note": "通用机台池"
+    },
+    {
+      "process": "包装",
+      "machine": "热缩机+分切机",
+      "model": "通用",
+      "cap_low": 200000.0,
+      "cap_high": 200000.0,
+      "staff": null,
+      "note": "通用机台池"
+    },
+    {
+      "process": "包装",
+      "machine": "分色机",
+      "model": "906",
+      "cap_low": 50000.0,
+      "cap_high": 50000.0,
+      "staff": 1,
+      "note": null
+    },
+    {
+      "process": "焊接",
+      "machine": "1005焊机头",
+      "model": "1005",
+      "cap_low": 7000.0,
+      "cap_high": 7000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "128/604自动车",
+      "model": "128",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "128/604自动车",
+      "model": "604",
+      "cap_low": 25000.0,
+      "cap_high": 25000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "129自动车",
+      "model": "129",
+      "cap_low": 23000.0,
+      "cap_high": 23000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "132T压外壳",
+      "model": "132",
+      "cap_low": 7500.0,
+      "cap_high": 7500.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "135压外壳新",
+      "model": "135",
+      "cap_low": 5000.0,
+      "cap_high": 5000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "137压外壳",
+      "model": "137",
+      "cap_low": 7500.0,
+      "cap_high": 7500.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "138焊小白头+翻小白头",
+      "model": "138",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "801焊接（5个头）",
+      "model": "801",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "1802焊接（小白头+底板+小进气）",
+      "model": "1802",
+      "cap_low": 6000.0,
+      "cap_high": 6000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "1902手工散件",
+      "model": "1902",
+      "cap_low": 5120.0,
+      "cap_high": 5120.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "2201焊底板+小进气",
+      "model": "2201",
+      "cap_low": 7000.0,
+      "cap_high": 7000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "603焊底板",
+      "model": "603",
+      "cap_low": 10000.0,
+      "cap_high": 10000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "708焊小白头",
+      "model": "708",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "711焊小白头+翻小白头",
+      "model": "711",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "712焊小白头+小白头",
+      "model": "712",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "715焊小白头+翻小白头",
+      "model": "715",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "716焊小白头+翻小白头",
+      "model": "716",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "717自动车",
+      "model": "717",
+      "cap_low": 28000.0,
+      "cap_high": 28000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "718焊小白头+翻小白头",
+      "model": "718",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "777手工散件",
+      "model": "777",
+      "cap_low": 5120.0,
+      "cap_high": 5120.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "903焊小白头+翻小白头",
+      "model": "903",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "906/916自动车做散件",
+      "model": "906",
+      "cap_low": 56000.0,
+      "cap_high": 56000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "906/916自动车做散件",
+      "model": "916",
+      "cap_low": 56000.0,
+      "cap_high": 56000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "908加长焊小白头+翻小白头",
+      "model": "908",
+      "cap_low": 35000.0,
+      "cap_high": 35000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "917翻小白头+焊小白头",
+      "model": "917",
+      "cap_low": 38000.0,
+      "cap_high": 38000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "918焊小白头+翻小白头",
+      "model": "918",
+      "cap_low": 45000.0,
+      "cap_high": 45000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "919焊小白头+翻小白头",
+      "model": "919",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "921/923自动车",
+      "model": "921",
+      "cap_low": 100000.0,
+      "cap_high": 100000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "921/923自动车",
+      "model": "923",
+      "cap_low": 100000.0,
+      "cap_high": 100000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "926（花朵)焊小白头",
+      "model": "926",
+      "cap_low": 30000.0,
+      "cap_high": 30000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "720焊小白头+翻小白头",
+      "model": "720",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "161焊小白头+翻小白头",
+      "model": "161",
+      "cap_low": 40000.0,
+      "cap_high": 40000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "605焊底",
+      "model": "605",
+      "cap_low": 20000.0,
+      "cap_high": 20000.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    },
+    {
+      "process": "焊接",
+      "machine": "911手工散件",
+      "model": "911",
+      "cap_low": 5120.0,
+      "cap_high": 5120.0,
+      "staff": null,
+      "note": "瓶颈子工序"
+    }
+  ],
+  "capacity": {
+    "128": {
+      "加气": 30000.0,
+      "试火": 36000.0,
+      "质检": 64800.0,
+      "包装": 20000.0,
+      "焊接": 25000.0
+    },
+    "711": {
+      "加气": 30000.0,
+      "试火": 36000.0,
+      "质检": 93600.0,
+      "翻板": 40000.0,
+      "包装": 60000.0,
+      "焊接": 40000.0
+    },
+    "712": {
+      "加气": 65000.0,
+      "试火": 20000.0,
+      "质检": 100800.0,
+      "翻板": 35000.0,
+      "包装": 60000.0,
+      "焊接": 40000.0
+    },
+    "138": {
+      "加气": 30000.0,
+      "试火": 36000.0,
+      "翻板": 16000.0,
+      "包装": 38480.0,
+      "焊接": 40000.0
+    },
+    "903": {
+      "加气": 15000.0,
+      "试火": 36000.0,
+      "质检": 79200.0,
+      "翻板": 80000.0,
+      "焊接": 40000.0
+    },
+    "129": {
+      "加气": 15000.0,
+      "试火": 36000.0,
+      "质检": 70600.0,
+      "翻板": 35000.0,
+      "包装": 60000.0,
+      "焊接": 23000.0
+    },
+    "906": {
+      "加气": 80000.0,
+      "试火": 122000.0,
+      "质检": 148000.0,
+      "翻板": 165000.0,
+      "包装": 220000.0,
+      "焊接": 56000.0
+    },
+    "801": {
+      "加气": 80000.0,
+      "试火": 86000.0,
+      "质检": 50000.0,
+      "翻板": 80000.0,
+      "焊接": 35000.0
+    },
+    "916": {
+      "加气": 80000.0,
+      "试火": 122000.0,
+      "质检": 270400.0,
+      "翻板": 130000.0,
+      "包装": 220000.0,
+      "焊接": 56000.0
+    },
+    "2201": {
+      "加气": 15000.0,
+      "试火": 34000.0,
+      "质检": 43200.0,
+      "翻板": 20000.0,
+      "包装": 6000.0,
+      "焊接": 7000.0
+    },
+    "603": {
+      "加气": 15000.0,
+      "试火": 34000.0,
+      "质检": 39600.0,
+      "翻板": 20000.0,
+      "包装": 6000.0,
+      "焊接": 10000.0
+    },
+    "717": {
+      "加气": 15000.0,
+      "试火": 36000.0,
+      "质检": 86400.0,
+      "翻板": 35000.0,
+      "包装": 120000.0,
+      "焊接": 28000.0
+    },
+    "137": {
+      "加气": 15000.0,
+      "试火": 72000.0,
+      "质检": 57600.0,
+      "焊接": 7500.0
+    },
+    "716": {
+      "加气": 50000.0,
+      "试火": 36000.0,
+      "翻板": 30000.0,
+      "包装": 60000.0,
+      "焊接": 40000.0
+    },
+    "926": {
+      "加气": 15000.0,
+      "翻板": 20000.0,
+      "包装": 4000.0,
+      "焊接": 30000.0
+    },
+    "908": {
+      "加气": 15000.0,
+      "试火": 36000.0,
+      "质检": 86400.0,
+      "翻板": 25000.0,
+      "焊接": 35000.0
+    },
+    "605": {
+      "加气": 40000.0,
+      "试火": 34000.0,
+      "质检": 61200.0,
+      "翻板": 20000.0,
+      "焊接": 20000.0
+    },
+    "135": {
+      "加气": 15000.0,
+      "试火": 56000.0,
+      "质检": 64800.0,
+      "包装": 7500.0,
+      "焊接": 5000.0
+    },
+    "720": {
+      "加气": 160000.0,
+      "试火": 122000.0,
+      "质检": 129600.0,
+      "翻板": 30000.0,
+      "包装": 80000.0,
+      "焊接": 40000.0
+    },
+    "921": {
+      "加气": 160000.0,
+      "试火": 172000.0,
+      "质检": 211200.0,
+      "翻板": 135000.0,
+      "包装": 150000.0,
+      "焊接": 100000.0
+    },
+    "920": {
+      "加气": 80000.0,
+      "质检": 93600.0,
+      "翻板": 30000.0
+    },
+    "715": {
+      "加气": 70000.0,
+      "试火": 72000.0,
+      "质检": 144000.0,
+      "翻板": 40000.0,
+      "包装": 110000.0,
+      "焊接": 40000.0
+    },
+    "919": {
+      "加气": 70000.0,
+      "试火": 108000.0,
+      "质检": 144000.0,
+      "翻板": 43000.0,
+      "包装": 60000.0,
+      "焊接": 40000.0
+    },
+    "917": {
+      "加气": 35000.0,
+      "质检": 108000.0,
+      "翻板": 120000.0,
+      "焊接": 38000.0
+    },
+    "918": {
+      "加气": 60000.0,
+      "试火": 106000.0,
+      "质检": 144000.0,
+      "翻板": 40000.0,
+      "包装": 85000.0,
+      "焊接": 45000.0
+    },
+    "718": {
+      "加气": 60000.0,
+      "试火": 122000.0,
+      "质检": 145200.0,
+      "翻板": 35000.0,
+      "包装": 60000.0,
+      "焊接": 40000.0
+    },
+    "161": {
+      "加气": 60000.0,
+      "试火": 36000.0,
+      "质检": 46800.0,
+      "焊接": 40000.0
+    },
+    "2012": {
+      "加气": 6000.0,
+      "试火": 10000.0,
+      "质检": 36000.0,
+      "包装": 20376.0
+    },
+    "911": {
+      "加气": 12000.0,
+      "试火": 10000.0,
+      "质检": 61200.0,
+      "焊接": 5120.0
+    },
+    "1802": {
+      "加气": 9600.0,
+      "试火": 17000.0,
+      "焊接": 6000.0
+    },
+    "1902": {
+      "加气": 7500.0,
+      "试火": 10000.0,
+      "焊接": 5120.0
+    },
+    "132": {
+      "加气": 14000.0,
+      "试火": 36000.0,
+      "质检": 46800.0,
+      "焊接": 7500.0
+    },
+    "1908": {
+      "加气": 9600.0
+    },
+    "604": {
+      "试火": 36000.0,
+      "质检": 43200.0,
+      "翻板": 20000.0,
+      "焊接": 25000.0
+    },
+    "1005": {
+      "试火": 10000.0,
+      "质检": 43200.0,
+      "焊接": 7000.0
+    },
+    "708": {
+      "质检": 72000.0,
+      "焊接": 35000.0
+    },
+    "923": {
+      "包装": 36000.0,
+      "焊接": 100000.0
+    },
+    "777": {
+      "焊接": 5120.0
+    }
+  },
+  "universal_packing_pool": 450000.0
+}

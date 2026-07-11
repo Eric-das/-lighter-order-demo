@@ -3,7 +3,9 @@ __pycache__/
 *.pyc
 *.pyo
 .streamlit/secrets.toml
-data/
+data/*
+!data/capacity.json
+排产数据/
 *.db
 .venv/
 venv/
