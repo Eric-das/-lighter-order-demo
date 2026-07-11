@@ -30,8 +30,11 @@ import pandas as pd
 DEFAULT_SOURCE = Path(r"E:\项目\Demo\排产数据\排产软件")
 DEFAULT_OUTPUT = Path(__file__).resolve().parent.parent / "data" / "capacity.json"
 
-# Process route in production order. 质检 pools 机检 + 手检.
-ROUTE = ["焊接", "翻板", "加气", "试火", "质检", "包装"]
+# Process route in real production order (confirmed by the factory 2026-07-11):
+# 焊接→加气→调火(试火)→翻板/组装→机检/手检→包装. 注塑 makes components on
+# separate work orders and feeds the workshops, so it is not part of this route.
+# 质检 pools 机检 + 手检; 翻板 covers 翻板/组装 (which one depends on product).
+ROUTE = ["焊接", "加气", "试火", "翻板", "质检", "包装"]
 
 _MODEL_RE = re.compile(r"^(\d{3,4})")
 

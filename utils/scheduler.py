@@ -65,17 +65,23 @@ def schedule(
 ) -> ScheduleResult:
     route: list[str] = capacity_data["meta"]["route"]
     capacity: dict = capacity_data["capacity"]
+    universal_packing = float(capacity_data.get("universal_packing_pool", 0))
 
     days = [start_date + timedelta(days=i) for i in range(horizon_days)]
     workday = [rest_weekday is None or d.weekday() != rest_weekday for d in days]
 
     # remaining capacity pools, filled lazily per (process, model)
     remaining: dict[tuple, list[float]] = {}
+    # 包装 has a shared pool of universal machines on top of dedicated ones
+    universal_pool = [
+        universal_packing * overtime_factor if workday[i] else 0.0
+        for i in range(horizon_days)
+    ]
     # aggregated load for the utilization view (per process/day over ALL models)
     load: dict[tuple, dict] = {}
 
     def get_pool(process: str, model: str) -> list[float] | None:
-        """Daily remaining capacity; None => unconstrained (no data)."""
+        """Daily remaining dedicated capacity; None => unconstrained (no data)."""
         cap = capacity.get(model, {}).get(process, 0)
         if not cap:
             return None
@@ -106,10 +112,13 @@ def schedule(
 
         for process in route:
             pool = get_pool(process, order.model)
-            if pool is None:
+            shared = universal_pool if process == "包装" and universal_packing else None
+            if pool is None and shared is None:
                 warnings.append(f"{process}: 无产能数据,按无约束处理")
                 # data gap: pass through instantly (cum_avail unchanged)
                 continue
+            if pool is None and process == "包装":
+                warnings.append("包装: 无专用机台,使用通用包装池")
             cum_done = 0.0
             new_cum = [0.0] * horizon_days
             for i in range(horizon_days):
@@ -120,9 +129,16 @@ def schedule(
                     # previous process finished by END of YESTERDAY
                     upstream = cum_avail[i - 1] if i > 0 else 0.0
                 avail = upstream - cum_done
-                do = min(avail, pool[i])
+                cap_today = (pool[i] if pool is not None else 0.0) + \
+                    (shared[i] if shared is not None else 0.0)
+                do = min(avail, cap_today)
                 if do > 0:
-                    pool[i] -= do
+                    # consume dedicated machines first, then the shared pool
+                    from_dedicated = min(do, pool[i]) if pool is not None else 0.0
+                    if pool is not None:
+                        pool[i] -= from_dedicated
+                    if shared is not None:
+                        shared[i] -= do - from_dedicated
                     cum_done += do
                     plan.append({
                         "date": days[i], "process": process,

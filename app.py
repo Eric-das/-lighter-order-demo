@@ -21,6 +21,14 @@ from utils.scheduler import OrderInput, load_capacity, schedule
 
 load_dotenv()
 
+# Bridge Streamlit Cloud secrets -> env vars, so os.getenv() in agents works
+# whether the key comes from a local .env or the cloud Secrets panel.
+try:
+    for _k, _v in st.secrets.items():
+        os.environ.setdefault(_k, str(_v))
+except Exception:
+    pass
+
 
 # ---------- Page config ----------
 st.set_page_config(
@@ -29,6 +37,38 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
+
+
+# ---------- Access gate ----------
+def _check_password() -> bool:
+    """Gate the app behind APP_PASSWORD (from Secrets / .env).
+
+    If APP_PASSWORD is not set, the app is open (local dev / no protection).
+    """
+    expected = os.getenv("APP_PASSWORD")
+    if not expected:
+        return True  # no password configured -> open
+    if st.session_state.get("_auth_ok"):
+        return True
+
+    def _on_submit():
+        st.session_state["_auth_ok"] = st.session_state.get("_pw_input") == expected
+
+    st.title("🔥 Lighter Order Parser")
+    st.text_input(
+        "🔒 访问密码 / Access password",
+        type="password",
+        key="_pw_input",
+        on_change=_on_submit,
+    )
+    if st.session_state.get("_auth_ok") is False:
+        st.error("密码错误 / Wrong password")
+    st.caption("请输入访问密码后使用 / Enter the access password to continue.")
+    return False
+
+
+if not _check_password():
+    st.stop()
 
 
 # ---------- Sidebar: language ----------

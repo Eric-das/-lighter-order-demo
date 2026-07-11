@@ -14,3 +14,4 @@ env/
 .idea/
 .vscode/
 *.swp
+*.log
